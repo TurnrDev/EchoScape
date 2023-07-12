@@ -1388,3 +1388,9 @@ shape = SubResource("RectangleShape2D_xnls8")
 
 [node name="player" parent="." instance=ExtResource("1_gc2k5")]
 position = Vector2(16, 72)
+
+[node name="Camera2D" type="Camera2D" parent="player"]
+zoom = Vector2(2.5, 2.5)
+position_smoothing_enabled = true
+drag_horizontal_enabled = true
+drag_vertical_enabled = true
