@@ -18,4 +18,5 @@ func _physics_process(delta):
 	$adam.frame = texture_dir_map[facing]
 	
 	# Finally, move
-	position += direction * 200 * delta
+	velocity = direction * 200
+	move_and_slide()
