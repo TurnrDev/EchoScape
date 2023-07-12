@@ -16,4 +16,4 @@ func _physics_process(delta):
 			facing = cardinal_direction
 	
 	# Update Sprite
-	var frame = texture_dir_map[facing]
+	$adam.frame = texture_dir_map[facing]
