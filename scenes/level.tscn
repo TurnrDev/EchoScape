@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://b5aqjpbktck4a"]
+[gd_scene load_steps=12 format=3 uid="uid://b5aqjpbktck4a"]
 
 [ext_resource type="PackedScene" uid="uid://cqlt4tbm6qk1g" path="res://characters/player.tscn" id="1_gc2k5"]
 [ext_resource type="Texture2D" uid="uid://ce5ap3udwi5my" path="res://assets/interiors/32x32/Interiors_free_32x32.png" id="2_d6xga"]
@@ -1364,6 +1364,16 @@ sources/1 = SubResource("TileSetAtlasSource_27hfb")
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xnls8"]
 size = Vector2(320, 64)
 
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_k6vyd"]
+distance = -96.0
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_8etgj"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_4cg1j"]
+distance = -320.0
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_30wrd"]
+
 [node name="Level" type="Node"]
 
 [node name="TileMap" type="TileMap" parent="."]
@@ -1394,3 +1404,20 @@ zoom = Vector2(2.5, 2.5)
 position_smoothing_enabled = true
 drag_horizontal_enabled = true
 drag_vertical_enabled = true
+
+[node name="WorldBoundary" type="StaticBody2D" parent="."]
+
+[node name="South" type="CollisionShape2D" parent="WorldBoundary"]
+shape = SubResource("WorldBoundaryShape2D_k6vyd")
+
+[node name="West" type="CollisionShape2D" parent="WorldBoundary"]
+rotation = 1.5708
+shape = SubResource("WorldBoundaryShape2D_8etgj")
+
+[node name="East" type="CollisionShape2D" parent="WorldBoundary"]
+rotation = -1.5708
+shape = SubResource("WorldBoundaryShape2D_4cg1j")
+
+[node name="North" type="CollisionShape2D" parent="WorldBoundary"]
+rotation = 3.14159
+shape = SubResource("WorldBoundaryShape2D_30wrd")
