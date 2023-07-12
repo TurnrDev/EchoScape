@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://b5aqjpbktck4a"]
+[gd_scene load_steps=8 format=3 uid="uid://b5aqjpbktck4a"]
 
 [ext_resource type="PackedScene" uid="uid://cqlt4tbm6qk1g" path="res://characters/player.tscn" id="1_gc2k5"]
 [ext_resource type="Texture2D" uid="uid://ce5ap3udwi5my" path="res://assets/interiors/32x32/Interiors_free_32x32.png" id="2_d6xga"]
@@ -1361,6 +1361,9 @@ texture_region_size = Vector2i(32, 32)
 sources/0 = SubResource("TileSetAtlasSource_vqshg")
 sources/1 = SubResource("TileSetAtlasSource_27hfb")
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xnls8"]
+size = Vector2(320, 64)
+
 [node name="Level" type="Node"]
 
 [node name="TileMap" type="TileMap" parent="."]
@@ -1368,7 +1371,20 @@ position = Vector2(8, 8)
 tile_set = SubResource("TileSet_aktqc")
 cell_quadrant_size = 32
 format = 2
-layer_0/tile_data = PackedInt32Array(0, 1, 13, 65536, 1, 14, 2, 65537, 13, 65538, 65537, 14, 3, 65537, 13, 65539, 65537, 14, 4, 65537, 13, 65540, 65537, 14, 5, 65537, 13, 65541, 65537, 14, 6, 65537, 13, 65542, 65537, 14, 7, 65537, 13, 65543, 65537, 14, 8, 65537, 13, 65544, 65537, 14, 9, 65537, 13, 65545, 65537, 14, 10, 65537, 13, 65546, 65537, 14, 11, 65537, 13, 65547, 65537, 14, 12, 65537, 13, 65548, 65537, 14, 13, 65537, 13, 65549, 65537, 14, 14, 65537, 13, 65550, 65537, 14, 15, 65537, 13, 65551, 65537, 14, 16, 65537, 13, 65552, 65537, 14, 17, 65537, 13, 65553, 65537, 14, 18, 131073, 13, 65554, 131073, 14, 196608, 983041, 12, 196610, 983041, 12, 196612, 983041, 12, 196609, 983041, 12, 196611, 983041, 12, 196613, 983041, 12, 196614, 983041, 12, 196615, 983041, 12, 196616, 983041, 12, 196617, 983041, 12, 196618, 983041, 12, 196619, 983041, 12, 196620, 983041, 12, 196621, 983041, 12, 196622, 983041, 12, 196623, 983041, 12, 196624, 983041, 12, 196625, 983041, 12, 196626, 983041, 12, 262162, 983041, 12, 327698, 983041, 12, 327697, 983041, 12, 327696, 983041, 12, 327695, 983041, 12, 327694, 983041, 12, 327693, 983041, 12, 327692, 983041, 12, 327691, 983041, 12, 327690, 983041, 12, 327689, 983041, 12, 327688, 983041, 12, 327687, 983041, 12, 327686, 983041, 12, 327685, 983041, 12, 327684, 983041, 12, 327683, 983041, 12, 327682, 983041, 12, 327681, 983041, 12, 327680, 983041, 12)
+layer_0/tile_data = PackedInt32Array(262144, 983041, 12, 262146, 983041, 12, 262148, 983041, 12, 262150, 983041, 12, 262152, 983041, 12, 262154, 983041, 12, 262156, 983041, 12, 262158, 983041, 12, 262160, 983041, 12, 262162, 983041, 12)
+
+[node name="wall" type="StaticBody2D" parent="."]
+
+[node name="TileMap" type="TileMap" parent="wall"]
+position = Vector2(8, 8)
+tile_set = SubResource("TileSet_aktqc")
+cell_quadrant_size = 32
+format = 2
+layer_0/tile_data = PackedInt32Array(131072, 1, 12, 131074, 65537, 12, 131076, 65537, 12, 131078, 65537, 12, 131080, 65537, 12, 131082, 65537, 12, 131084, 65537, 12, 131086, 65537, 12, 131088, 65537, 12, 131090, 131073, 12, 18, 131073, 11, 16, 65537, 11, 14, 65537, 11, 12, 65537, 11, 10, 65537, 11, 8, 65537, 11, 6, 65537, 11, 4, 65537, 11, 2, 65537, 11, 0, 1, 11)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="wall"]
+position = Vector2(160, 32)
+shape = SubResource("RectangleShape2D_xnls8")
 
 [node name="player" parent="." instance=ExtResource("1_gc2k5")]
-position = Vector2(16, 56)
+position = Vector2(16, 72)
