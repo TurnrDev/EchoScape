@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://bjulhhiimi465" path="res://assets/characters/Adam_idle_16x16.png" id="1_yoc2o"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_2ro7p"]
-radius = 4.0
+radius = 1.0
 height = 16.0
 
 [node name="player" type="CharacterBody2D"]
