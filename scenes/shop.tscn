@@ -1,23 +1,50 @@
-[gd_scene load_steps=4 format=3 uid="uid://b5aqjpbktck4a"]
+[gd_scene load_steps=4 format=3 uid="uid://ubo1swmjii68"]
 
-[ext_resource type="PackedScene" uid="uid://cqlt4tbm6qk1g" path="res://characters/player.tscn" id="1_gc2k5"]
-[ext_resource type="TileSet" uid="uid://dgw7umjhg6mlf" path="res://assets/interiors/32x32/room_builder.tres" id="1_osbng"]
-[ext_resource type="TileSet" uid="uid://cgf1bl8ylw0pr" path="res://assets/interiors/32x32/interiors.tres" id="2_lwwlj"]
+[ext_resource type="TileSet" uid="uid://dgw7umjhg6mlf" path="res://assets/interiors/32x32/room_builder.tres" id="1_p7h1x"]
+[ext_resource type="TileSet" uid="uid://cgf1bl8ylw0pr" path="res://assets/interiors/32x32/interiors.tres" id="2_dhemi"]
+[ext_resource type="PackedScene" uid="uid://cqlt4tbm6qk1g" path="res://characters/player.tscn" id="3_uh0n8"]
 
-[node name="root" type="Node"]
+[node name="shop" type="Node2D"]
+y_sort_enabled = true
 
-[node name="BackgroundTileMap" type="TileMap" parent="."]
-tile_set = ExtResource("1_osbng")
+[node name="background" type="Node2D" parent="."]
+
+[node name="BackgroundTileMap" type="TileMap" parent="background"]
+tile_set = ExtResource("1_p7h1x")
 format = 2
 layer_0/tile_data = PackedInt32Array(0, 1, 11, 65536, 1, 12, 1, 65537, 11, 65537, 65537, 12, 2, 65537, 11, 65538, 65537, 12, 3, 65537, 11, 65539, 65537, 12, 4, 65537, 11, 65540, 65537, 12, 5, 65537, 11, 65541, 65537, 12, 6, 65537, 11, 65542, 65537, 12, 7, 131073, 11, 65543, 131073, 12, 131072, 720897, 11, 196608, 720897, 12, 262144, 720897, 12, 131073, 786433, 11, 131074, 786433, 11, 131075, 786433, 11, 131076, 786433, 11, 131077, 786433, 11, 131078, 786433, 11, 131079, 786433, 11, 196609, 786433, 12, 196610, 786433, 12, 196611, 786433, 12, 196612, 786433, 12, 196613, 786433, 12, 196614, 786433, 12, 196615, 786433, 12, 262151, 786433, 12, 262150, 786433, 12, 262149, 786433, 12, 262148, 786433, 12, 262147, 786433, 12, 262146, 786433, 12, 262145, 786433, 12, 327680, 786433, 3, 327681, 786433, 3, 327682, 786433, 3, 327683, 786433, 3, 327684, 786433, 3, 327685, 786433, 3, 327686, 786433, 3, 65535, 720897, 1, 131071, 720897, 2, 196607, 720897, 2, 262143, 720897, 2, 327679, 720897, 2, 393215, 720897, 3, 8, 851969, 1, 65544, 851969, 2, 131080, 851969, 2, 196616, 851969, 2, 262152, 851969, 2, 327688, 851969, 3, 327687, 786433, 3)
 
-[node name="ObjectTileMap" type="TileMap" parent="."]
-tile_set = ExtResource("2_lwwlj")
+[node name="door" type="TileMap" parent="background"]
+tile_set = ExtResource("2_dhemi")
 cell_quadrant_size = 32
 format = 2
-layer_0/tile_data = PackedInt32Array(196610, 65536, 8, 196611, 196608, 9, 196612, 196608, 5, 196613, 65536, 8, 196614, 65536, 8, 196615, 65536, 8, 131075, 196608, 8, 6, 131072, 15, 65542, 131072, 16, 131078, 131072, 17, 7, 196608, 15, 65543, 196608, 16, 131079, 196608, 17, 0, 131072, 28, 65536, 131072, 29, 1, 196608, 28, 65537, 196608, 29)
+layer_0/tile_data = PackedInt32Array(0, 131072, 28, 65536, 131072, 29, 1, 196608, 28, 65537, 196608, 29)
 
-[node name="player" parent="." instance=ExtResource("1_gc2k5")]
+[node name="cabinet" type="TileMap" parent="background"]
+position = Vector2(192, 64)
+tile_set = ExtResource("2_dhemi")
+cell_quadrant_size = 32
+format = 2
+layer_0/tile_data = PackedInt32Array(-131072, 131072, 15, -65536, 131072, 16, -131071, 196608, 15, -65535, 196608, 16, 0, 131072, 17, 1, 196608, 17)
+
+[node name="counter" type="TileMap" parent="."]
+y_sort_enabled = true
+position = Vector2(64, 96)
+tile_set = ExtResource("2_dhemi")
+cell_quadrant_size = 32
+format = 2
+layer_0/tile_data = PackedInt32Array(0, 65536, 8, 2, 65536, 8, 3, 65536, 8, 4, 65536, 8, 5, 65536, 8)
+
+[node name="computer" type="TileMap" parent="."]
+y_sort_enabled = true
+position = Vector2(96, 96)
+tile_set = ExtResource("2_dhemi")
+cell_quadrant_size = 32
+format = 2
+layer_0/tile_data = PackedInt32Array(-65536, 196608, 8, 0, 196608, 9)
+
+[node name="player" parent="." instance=ExtResource("3_uh0n8")]
+y_sort_enabled = true
 position = Vector2(16, 72)
 
 [node name="Camera2D" type="Camera2D" parent="player"]

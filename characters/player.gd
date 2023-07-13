@@ -15,7 +15,7 @@ func _physics_process(delta):
 			facing = cardinal_direction
 	
 	# Update Sprite
-	$adam.frame = texture_dir_map[facing]
+	$sprite.frame = texture_dir_map[facing]
 	
 	# Finally, move
 	velocity = direction * 200
