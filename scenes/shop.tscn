@@ -4,7 +4,7 @@
 [ext_resource type="TileSet" uid="uid://dgw7umjhg6mlf" path="res://assets/interiors/32x32/room_builder.tres" id="1_osbng"]
 [ext_resource type="TileSet" uid="uid://cgf1bl8ylw0pr" path="res://assets/interiors/32x32/interiors.tres" id="2_lwwlj"]
 
-[node name="Level" type="Node"]
+[node name="root" type="Node"]
 
 [node name="BackgroundTileMap" type="TileMap" parent="."]
 tile_set = ExtResource("1_osbng")
@@ -15,7 +15,7 @@ layer_0/tile_data = PackedInt32Array(0, 1, 11, 65536, 1, 12, 1, 65537, 11, 65537
 tile_set = ExtResource("2_lwwlj")
 cell_quadrant_size = 32
 format = 2
-layer_0/tile_data = PackedInt32Array(3, 262144, 68, 65539, 262144, 69, 131075, 262144, 70, 4, 327680, 68, 65540, 327680, 69, 131076, 327680, 70)
+layer_0/tile_data = PackedInt32Array(196610, 65536, 8, 196611, 196608, 9, 196612, 196608, 5, 196613, 65536, 8, 196614, 65536, 8, 196615, 65536, 8, 131075, 196608, 8, 6, 131072, 15, 65542, 131072, 16, 131078, 131072, 17, 7, 196608, 15, 65543, 196608, 16, 131079, 196608, 17, 0, 131072, 28, 65536, 131072, 29, 1, 196608, 28, 65537, 196608, 29)
 
 [node name="player" parent="." instance=ExtResource("1_gc2k5")]
 position = Vector2(16, 72)
