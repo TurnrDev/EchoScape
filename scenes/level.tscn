@@ -1,25 +1,15 @@
-[gd_scene load_steps=8 format=3 uid="uid://b5aqjpbktck4a"]
+[gd_scene load_steps=4 format=3 uid="uid://b5aqjpbktck4a"]
 
 [ext_resource type="PackedScene" uid="uid://cqlt4tbm6qk1g" path="res://characters/player.tscn" id="1_gc2k5"]
 [ext_resource type="TileSet" uid="uid://dgw7umjhg6mlf" path="res://assets/interiors/32x32/room_builder.tres" id="1_osbng"]
 [ext_resource type="TileSet" uid="uid://cgf1bl8ylw0pr" path="res://assets/interiors/32x32/interiors.tres" id="2_lwwlj"]
-
-[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_k6vyd"]
-distance = -160.0
-
-[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_8etgj"]
-
-[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_4cg1j"]
-distance = -256.0
-
-[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_30wrd"]
 
 [node name="Level" type="Node"]
 
 [node name="BackgroundTileMap" type="TileMap" parent="."]
 tile_set = ExtResource("1_osbng")
 format = 2
-layer_0/tile_data = PackedInt32Array(0, 1, 11, 65536, 1, 12, 1, 65537, 11, 65537, 65537, 12, 2, 65537, 11, 65538, 65537, 12, 3, 65537, 11, 65539, 65537, 12, 4, 65537, 11, 65540, 65537, 12, 5, 65537, 11, 65541, 65537, 12, 6, 65537, 11, 65542, 65537, 12, 7, 131073, 11, 65543, 131073, 12, 131072, 720897, 11, 196608, 720897, 12, 262144, 720897, 12, 131073, 786433, 11, 131074, 786433, 11, 131075, 786433, 11, 131076, 786433, 11, 131077, 786433, 11, 131078, 786433, 11, 131079, 786433, 11, 196609, 786433, 12, 196610, 786433, 12, 196611, 786433, 12, 196612, 786433, 12, 196613, 786433, 12, 196614, 786433, 12, 196615, 786433, 12, 262151, 786433, 12, 262150, 786433, 12, 262149, 786433, 12, 262148, 786433, 12, 262147, 786433, 12, 262146, 786433, 12, 262145, 786433, 12)
+layer_0/tile_data = PackedInt32Array(0, 1, 11, 65536, 1, 12, 1, 65537, 11, 65537, 65537, 12, 2, 65537, 11, 65538, 65537, 12, 3, 65537, 11, 65539, 65537, 12, 4, 65537, 11, 65540, 65537, 12, 5, 65537, 11, 65541, 65537, 12, 6, 65537, 11, 65542, 65537, 12, 7, 131073, 11, 65543, 131073, 12, 131072, 720897, 11, 196608, 720897, 12, 262144, 720897, 12, 131073, 786433, 11, 131074, 786433, 11, 131075, 786433, 11, 131076, 786433, 11, 131077, 786433, 11, 131078, 786433, 11, 131079, 786433, 11, 196609, 786433, 12, 196610, 786433, 12, 196611, 786433, 12, 196612, 786433, 12, 196613, 786433, 12, 196614, 786433, 12, 196615, 786433, 12, 262151, 786433, 12, 262150, 786433, 12, 262149, 786433, 12, 262148, 786433, 12, 262147, 786433, 12, 262146, 786433, 12, 262145, 786433, 12, 327680, 786433, 3, 327681, 786433, 3, 327682, 786433, 3, 327683, 786433, 3, 327684, 786433, 3, 327685, 786433, 3, 327686, 786433, 3, 65535, 720897, 1, 131071, 720897, 2, 196607, 720897, 2, 262143, 720897, 2, 327679, 720897, 2, 393215, 720897, 3, 8, 851969, 1, 65544, 851969, 2, 131080, 851969, 2, 196616, 851969, 2, 262152, 851969, 2, 327688, 851969, 3, 327687, 786433, 3)
 
 [node name="ObjectTileMap" type="TileMap" parent="."]
 tile_set = ExtResource("2_lwwlj")
@@ -35,20 +25,3 @@ zoom = Vector2(2.5, 2.5)
 position_smoothing_enabled = true
 drag_horizontal_enabled = true
 drag_vertical_enabled = true
-
-[node name="WorldBoundary" type="StaticBody2D" parent="."]
-
-[node name="South" type="CollisionShape2D" parent="WorldBoundary"]
-shape = SubResource("WorldBoundaryShape2D_k6vyd")
-
-[node name="West" type="CollisionShape2D" parent="WorldBoundary"]
-rotation = 1.5708
-shape = SubResource("WorldBoundaryShape2D_8etgj")
-
-[node name="East" type="CollisionShape2D" parent="WorldBoundary"]
-rotation = -1.5708
-shape = SubResource("WorldBoundaryShape2D_4cg1j")
-
-[node name="North" type="CollisionShape2D" parent="WorldBoundary"]
-rotation = 3.14159
-shape = SubResource("WorldBoundaryShape2D_30wrd")
