@@ -23,7 +23,9 @@ layer_0/tile_data = PackedInt32Array(0, 1, 11, 65536, 1, 12, 1, 65537, 11, 65537
 
 [node name="ObjectTileMap" type="TileMap" parent="."]
 tile_set = ExtResource("2_lwwlj")
+cell_quadrant_size = 32
 format = 2
+layer_0/tile_data = PackedInt32Array(3, 262144, 68, 65539, 262144, 69, 131075, 262144, 70, 4, 327680, 68, 65540, 327680, 69, 131076, 327680, 70)
 
 [node name="player" parent="." instance=ExtResource("1_gc2k5")]
 position = Vector2(16, 72)
